@@ -39,9 +39,9 @@ public class LinearHashTable extends HashTable {
         for (int numProbes = 0; numProbes < table.length; numProbes++) {
             int index = (hashValue + numProbes) % table.length;
             if (table[index] == key) {
-                return new int[] {numProbes, 0};
+                return new int[] {numProbes + 1, 0};
             } else if (table[index] == 0) {
-                return new int[] {numProbes, 1};
+                return new int[] {numProbes + 1, 1};
             }
         }
         return new int[] {0, 1};

@@ -37,7 +37,6 @@ public class QuadraticHashTable extends HashTable {
         }
     }
 
-    
     /**
      * Determines the number of probes necessary to locate key or determine that it is not in the table
      * @param key the key to look for
@@ -52,11 +51,11 @@ public class QuadraticHashTable extends HashTable {
                 lowerIndex += table.length;
 
             if (table[upperIndex] == key) {
-                return new int[] {i == 0 ? 0 : 2 * i - 1, 0};
+                return new int[] {2 * i + 1, 0};
             } else if (table[lowerIndex] == key) {
-                return new int[] {2 * i, 0};
+                return new int[] {2 * i + 2, 0};
             } else if (table[upperIndex] == 0 || table[lowerIndex] == 0) {
-                return new int[] {table[upperIndex] == 0 ? (i == 0 ? 0 : 2 * i - 1) : 2 * i, 1};
+                return new int[] {table[upperIndex] == 0 ? 2 * i + 1 : 2 * i + 2, 1};
             }
         }
         return new int[] {0, 1};
