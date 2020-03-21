@@ -64,7 +64,7 @@ public abstract class HashTable {
     }
 
     /**
-     * Prints data for the successful and unsucessful searches of integers in the range [min...max] inclusive
+     * Prints data for the successful and unsuccessful searches of integers in the range [min...max] inclusive
      * @param min the minimum number to look for
      * @param max the maximum number to look for
      */
